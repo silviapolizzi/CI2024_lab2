@@ -12,7 +12,8 @@ The laboratory task is to implement two algorithm: one fast but more approximate
 The Greedy Algorithm is a simple algorithm that starts from a random city and at each step selects the nearest city that has not been visited yet. The algorithm stops when all the cities have been visited.
 
 ### Genetic Algorithm
-The Genetic Algorithm is a metaheuristic inspired by the process of natural selection. The algorithm starts by generating an initial population of individuals, each representing a possible solution to the problem. The individuals are then evaluated and the best ones are selected to generate the next generation. The selection process is based on the fitness of the individuals, which is calculated based on the distance of the path. The selected individuals are then crossed over and mutated to generate the next generation. The process is repeated for a number of generations.
+The Genetic Algorithm is a metaheuristic inspired by the process of natural selection. 
+The Genetic Algorithm initializes a population of random TSP tour solutions. Each solution is evaluated based on its fitness, which is inversely related to the total tour distance. Parents for the next generation are selected using methods like Roulette Wheel, Tournament, or Rank Selection, which balance fitness and randomness. Selected parents then undergo crossover and mutation to generate new offspring, repeating the process until termination. 
 
 #### Fitness Function
 The fitness function is used to evaluate the quality of the individuals. In this laboratory task, the fitness function is based on the total distance of the path. The fitness of an individual is calculated as the inverse of the total distance of the path, so that the higher the fitness, the better the individual.
@@ -53,7 +54,7 @@ The mutation rate is reduced over time to allow the algorithm to converge to a b
 #### Other tweaks
 In order to improve the performance of the genetic algorithm, some tweaks have been made to the algorithm. These tweaks include:
 
-1. Replacement Rate: Steady-state, replacing part of population where offsprings and parents compete.
+1. Replacement Rate: replacing part of population where offsprings and parents compete.
 2. Diversity Threshold: Maintain population diversity.
 
 
@@ -65,7 +66,7 @@ In order to improve the performance of the genetic algorithm, some tweaks have b
 | Number of Generations | 50000 | |
 | Number of Parents | 40 | |
 | Initial Mutation Rate | 0.8 | |
-| Replacement Rate | 0.5 | Steady-state |
+| Replacement Rate | 0.5 |  |
 | Diversity Threshold | 0.7 | Periodic check |
 
 *China has a large number of cities (726) and requires a larger population size to explore the search space effectively.
